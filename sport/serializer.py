@@ -1,8 +1,11 @@
 from rest_framework import serializers
-from .models import SportSection
+from .models import Section
 
-class SportSectionSerializer(serializers.ModelSerializer):
+class SectionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SportSection
+        model = Section
         fields = ['name','slug','image']
 
+
+class GameSerailizer(serializers.ModelSerializer):
+    pass

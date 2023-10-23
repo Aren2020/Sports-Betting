@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView
-from .models import SportSection
-from .serializer import SportSectionSerializer
+from .models import Section
+from .serializer import SectionSerializer
              
-class SportSectionListView(ListAPIView):
-    queryset = SportSection.objects.all()
-    serializer_class = SportSectionSerializer
+class SectionListView(ListAPIView):
+    queryset = Section.objects.all()
+    serializer_class = SectionSerializer
