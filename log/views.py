@@ -16,7 +16,7 @@ class RegistrationView(APIView):
             VerifyUser.objects.create(user = user,
                                       email = data['email'])
 
-            return Response({'status': 'Ok'})
+            return Response([{'status': 'Ok'}])
         else:
             if User.objects.filter(username = data['username']).exists():
                 return Response({'status':'UserAlreadyExit'})
@@ -26,4 +26,4 @@ class RegistrationView(APIView):
             to = data['email']
             send_mail(to,code)
 
-            return Response({'code': code}) 
+            return Response([{'code': code}]) 
