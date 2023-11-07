@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-image: url("https://cdn.discordapp.com/attachments/1161001927925059675/1171128558744252426/home-background.jpg?ex=655b8d76&is=65491876&hm=cf65b57838cad2fb55e5783210ba41af50eac8f7d009fd0d32c7fbbc81f59c87&");
+    background-size: cover
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #293133; */
+}
+
+.header a {
+    margin: 22px 10px;
+    text-decoration: none;
+    color: rgb(165, 168, 0);
+}
+
+.header a:hover {
+    transition: 0.3s;
+    color: #fefff9; 
+}
+
+.profile__picture {
+    width:  55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 5px 15px;
+}      
+
+.rank {
+    width: 45px;
+    height: 45px;
+    margin: 10px 0;
+    margin-left: 10px;
+}
+
+.header__text {
+    font-size: 27px;
+    margin: 15px;
+    color: #f2f3ec;
+}
+
+.red {
+    color: red;
+}
+
+.section {
+    font-size: 27px;
+    padding-top: 15px;
+    margin: 0 auto; 
+    color: #949494
+}
+
+.section:hover {
+    transition: 0.3s;
+    color: #f2f3ec; 
+}
+
+.game__list {
+    float: left;
+    width: 970px;
+}
+
+.game__list__header {
+    display: flex;
+    background-color: rgb(19, 19, 19);
+    margin-bottom: 10px;
+    margin-left: 7px;
+    border-radius: 5px;
+}
+
+
+.game__list__header p {
+    margin: 10px;
+    margin-left: 270px;
+    margin-right: 370px;
+    font-size: 35px;
+    color:  #cecece;
+} 
+
+.game__list__header form {
+    display: flex;
+}
+
+.game__list__header input {
+    font-size: 15px;
+    width: 200px;
+    margin: 10px;
+    padding: 7px;
+    border: 1px solid #cecece;
+    border-radius: 8px;
+    color:  #bdbdbd;
+    background-color: #374448;
+}
+
+.game__list__header form button {
+    margin: 15px;
+    margin-left: -47px; 
+    border: none;
+    background-color: #374448;
+}
+
+.game__list__header form i {
+    font-size: 20px;
+    color: #cecece;;
+}
+
+/* .games {
+    padding-bottom: 5px;
+} */
+
+.game {
+    border-radius: 5px;
+    margin-left: 7px;
+    display: flex;
+    height: 45px;
+    flex-wrap: wrap; 
+    background-color: #414141;
+}
+
+.game:hover {
+    transition: 0.3s;
+    background-color: #151515;
+}
+
+.game a {
+    font-size: 14px;
+    margin: 8px 0 0 15px;
+    color: #f3ebeb;
+    letter-spacing: 0.7px;
+    font-weight: 800;
+}
+
+a.team2 {
+    margin-top: -20px;
+}
+
+.game p {
+    margin: 0;
+    color: #f3ebeb;  
+}
+
+p.kf {
+    border: 1px solid rgb(7, 0, 0);
+    border-radius: 8px;
+    padding: 3px; 
+    width: 50px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: #ea6e2c;
+    margin-top: 4.5px;
+    margin-right: 8px;
+    font-size: 25px;
+}
+
+/* p.kf:first-child {
+    padding-left: -10px;
+} */
+
+p.kf:hover {
+    transition: 0.3s;
+    background-color: #823c17;
+}
+
+p.time {
+    font-size: 12px;
+    font-family: helvetica;
+    margin: 10px 10px 0 500px;
+}
+
+p.tv {
+    font-size: 12px;
+    margin-left: 495px;
+    margin-top: -15px;
+}
+
+p.members {
+    font-size: 12px;
+    margin: -15px auto 0 9px;
+}
+
+p.point {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 3px;
+    font-weight: 550;
+    /* margin-left: -15px; */
+}
+/*.team1 {
+    margin-left: 15px;
+}
+*/

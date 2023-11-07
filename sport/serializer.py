@@ -11,16 +11,28 @@ class PlayerSerializer(serializers.ModelSerializer):
         model = Player
         fields = ['name','slug','image']
 
-class TeamSerializer(serializers.ModelSerializer):
+class TeamListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Team
+        fields = ['name','slug','image']   
+
+class TeamDetailSerializer(serializers.ModelSerializer):
     players = PlayerSerializer(many = True)
     class Meta:
         model = Team
         fields = ['name','slug','image','players']
-
-class GameSerailizer(serializers.ModelSerializer):
-    section = SectionSerializer()
-    team1 = TeamSerializer()
-    team2 = TeamSerializer()
+ 
+class GameListSerailizer(serializers.ModelSerializer):
+    team1 = TeamListSerializer()
+    team2 = TeamListSerializer()
     class Meta:
         model = Game
-        fields = ['section','team1','team2','win','draw','lose']
+        fields = ['team1','team2','win','draw','lose']
+
+class GameDetailSerailizer(serializers.ModelSerializer):
+    # section = SectionSerializer()
+    team1 = TeamDetailSerializer()
+    team2 = TeamDetailSerializer()
+    class Meta:
+        model = Game
+        fields = ['team1','team2','win','draw','lose'] # 'section',
