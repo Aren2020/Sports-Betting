@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-
+    /* background-image: url("https://media.discordapp.net/attachments/1161001927925059675/1171128557968314428/auth-background-image.jpg?ex=655b8d76&is=65491876&hm=0cd49f1922c9a6f04ca7c8f24bcb9a6fc1ba8f6a4c1011d0d2f880a4b0aca279&=&width=994&height=662"); */
     background-image: url("https://cdn.discordapp.com/attachments/1161001927925059675/1171128558744252426/home-background.jpg?ex=655b8d76&is=65491876&hm=cf65b57838cad2fb55e5783210ba41af50eac8f7d009fd0d32c7fbbc81f59c87&");
     background-size: cover
 }
@@ -15,7 +15,7 @@ body {
 .header a {
     margin: 22px 10px;
     text-decoration: none;
-    color: rgb(165, 168, 0);
+    color: rgb(213, 216, 38);
 }
 
 .header a:hover {
@@ -117,8 +117,14 @@ body {
     margin-left: 7px;
     display: flex;
     height: 45px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f2f3ec; 
+    margin-bottom: 2px;
     background-color: #414141;
+}
+
+.game:nth-child(even) {
+    background-color: #353535;
 }
 
 .game:hover {
@@ -127,6 +133,7 @@ body {
 }
 
 .game a {
+    width: 570px;
     font-size: 14px;
     margin: 8px 0 0 15px;
     color: #f3ebeb;
@@ -135,11 +142,11 @@ body {
 }
 
 a.team2 {
-    margin-top: -20px;
+    margin-top: -43px;
 }
 
 .game p {
-    margin: 0;
+    /* margin: 0; */
     color: #f3ebeb;  
 }
 
@@ -168,26 +175,26 @@ p.kf:hover {
 p.time {
     font-size: 12px;
     font-family: helvetica;
-    margin: 10px 10px 0 500px;
+    margin: 10px 10px 0 0;
 }
 
 p.tv {
     font-size: 12px;
-    margin-left: 495px;
-    margin-top: -15px;
+    /* margin-left: 495px; */
+    margin-top: -40px;
 }
 
 p.members {
     font-size: 12px;
-    margin: -15px auto 0 9px;
+    margin: -40px auto 0 9px;
 }
 
 p.point {
     font-size: 16px;
-    margin-top: 15px;
-    margin-left: 3px;
+    width: auto;
+    margin-top: 13px;
     font-weight: 550;
-    /* margin-left: -15px; */
+    margin-left: -2px;
 }
 /*.team1 {
     margin-left: 15px;
