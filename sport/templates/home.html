@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="home.css">
+    <script defer src="navbar.js"></script>
     <title>Home</title>
 </head>
 <body>
     <div class="header">
         <span class="header__text">Casino<span style="color: red;">Web</span></span>
-        <div class="section">
+        <div class="section" id="section">
             Section
         </div>
-        <a href="#">Log In</a>
-        <a href="#">Log Out</a>   
-        <img class="rank" src="https://s3.amazonaws.com/images.ecwid.com/images/224443/1150688162.jpg" alt="Rank">
-        <img class="profile__picture" src="https://static.tildacdn.com/tild6338-3666-4133-a633-643664333838/photo.jpg" alt="Profile Picture">
+        <navbar class="navbar">
+            <ul>
+                <li><a href="#">La liga</a></li>
+                <li><a href="#">Asia</a></li>
+                <li><a href="#">Europe</a></li>
+                <li><a href="#">UEFA</a></li>
+                <li><a href="#">Africa</a></li>
+                <li><a href="#">Australia</a></li>
+            </ul>
+        </navbar>
+        <a class="login" href="#">Log In</a>
+        <img class="rank" src="https://upload.wikimedia.org/wikipedia/commons/7/79/5-11z._%D0%92%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%BD%D0%B0%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D1%83%D0%B6%D0%B0%D1%89%D0%B8%D0%B9_%D1%82%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D1%84%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D1%81%D1%82%D0%B2%D0%B0%2C_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B8%D0%B9_%D0%BD%D0%B0_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BD%D0%BE%D0%B9_%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C_1876%E2%80%931885_%D0%B3%D0%B3.png" alt="Rank">
+        <img class="profile__picture" src="https://yt3.googleusercontent.com/jcBsDWzj24r6PN3KvReqkReh62dt5Zq9GOJMCC9A8yk2DiJmRDFBtsts1T7IaC0Pk4HALDT1mw=s900-c-k-c0x00ffffff-no-rj" alt="Profile Picture">
     </div>
     <div class="game__list">
         <div class="game__list__header">
@@ -30,6 +40,51 @@
             <p>Games</p>
         </div>
         <div class="games">
+            <div class="game">
+                <a class="team1">Al Nasar</a>
+                <p class="time">05.11.2023 18.39</p>
+                <p class="kf">3.71</p>
+                <p class="kf">1.54</p>
+                <p class="kf">1.21</p>
+                <p class="point">+462 point</p>
+                <a class="team2">Barselona</a>
+                <p class="tv">TV ~</p>
+                <p class="members">546 players</p>    
+            </div>
+            <div class="game">
+                <a class="team1">Manchester City</a>
+                <p class="time">05.11.2023 18.39</p>
+                <p class="kf">3.71</p>
+                <p class="kf">1.54</p>
+                <p class="kf">1.21</p>
+                <p class="point">+462 point</p>
+                <a class="team2">Bavaria</a>
+                <p class="tv">TV ~</p>
+                <p class="members">546 players</p>    
+            </div>
+            <div class="game">
+                <a class="team1">Armenia</a>
+                <p class="time">06.10.2023 17.39</p>
+                <p class="kf">2.81</p>
+                <p class="kf">1.74</p>
+                <p class="kf">1.91</p>
+                <p class="point">+515 point</p>
+                <a class="team2">German</a>
+                <p class="tv">TV ~</p>
+                <p class="members">765 players</p>    
+            </div>
+            <br>
+            <div class="game">
+                <a class="team1">Real Madrid</a>
+                <p class="time">07.05.2024 10.10</p>
+                <p class="kf">8.92</p>
+                <p class="kf">2.48</p>
+                <p class="kf">3.54</p>
+                <p class="point">+659 point</p>
+                <a class="team2">Vayk Fc</a>
+                <p class="tv">TV ~</p>
+                <p class="members">015 players</p>    
+            </div>
             <div class="game">
                 <a class="team1">Al Nasar</a>
                 <p class="time">05.11.2023 18.39</p>
@@ -77,5 +132,31 @@
             </div>
         </div>
     </div> 
+    
+    <div class="list__news">
+        <div class="news__header">
+            <div class="news__header__text">
+                Sport News
+            </div>
+        </div>
+        <div class="news">
+            <img class="news__image" src="https://sportnewsapi.snapi.dev/images/v1/x/g/1833227-1-42188.jpg" alt="news_image">
+            <a class="news__title">
+                <br>Chelsea ace Mykhaylo Mudryk likens Arsenal star to Zinedine Zidane after Sevilla win
+            </a>       
+            <p>
+                Chelsea star Mykhaylo Mudryk has likened an Arsenal player to Real Madrid and France legend Zinedine Zidane.
+            </p>
+        </div>
+        <div class="news">
+            <img class="news__image" src="https://sportnewsapi.snapi.dev/images/v1/g/y/01hesnr1z0rt6ahacqs8-42164.jpg" alt="news_image">
+            <a class="news__title">
+                <br>Mikel Arteta sends Bukayo Saka message after latest injury concern
+            </a>       
+            <p>
+                Saka withdrawn towards end of Champions League clash with Sevilla because of knockThe 22-year-old grabbed a goal and an assist to push Arsenal closer to knockout stagesLeandro Trossard opened the scoring to lead Gunners to three valuable points
+            </p>
+        </div>
+    </div>
 </body>
 </html>

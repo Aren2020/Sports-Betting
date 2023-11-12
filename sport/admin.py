@@ -18,5 +18,7 @@ class PlayerAdmin(admin.ModelAdmin):
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
-    list_display = ['id', 'section', 'team1', 'team2','win','draw','lose']
+    list_display = ['id', 'section', 'team1', 'team2', 
+                    'time', 'tv', 'members', 'point', 
+                    'win', 'draw', 'lose'] 
     

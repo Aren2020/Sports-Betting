@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    /* background-image: url("https://media.discordapp.net/attachments/1161001927925059675/1171128557968314428/auth-background-image.jpg?ex=655b8d76&is=65491876&hm=0cd49f1922c9a6f04ca7c8f24bcb9a6fc1ba8f6a4c1011d0d2f880a4b0aca279&=&width=994&height=662"); */
-    background-image: url("https://cdn.discordapp.com/attachments/1161001927925059675/1171128558744252426/home-background.jpg?ex=655b8d76&is=65491876&hm=cf65b57838cad2fb55e5783210ba41af50eac8f7d009fd0d32c7fbbc81f59c87&");
+    background-image: url("https://media.discordapp.net/attachments/1161001927925059675/1171128557968314428/auth-background-image.jpg?ex=655b8d76&is=65491876&hm=0cd49f1922c9a6f04ca7c8f24bcb9a6fc1ba8f6a4c1011d0d2f880a4b0aca279&=&width=994&height=662");
+    /* background-image: url("https://cdn.discordapp.com/attachments/1161001927925059675/1171128558744252426/home-background.jpg?ex=655b8d76&is=65491876&hm=cf65b57838cad2fb55e5783210ba41af50eac8f7d009fd0d32c7fbbc81f59c87&"); */
     background-size: cover
 }
 
@@ -12,13 +12,16 @@ body {
     /* background-color: #293133; */
 }
 
-.header a {
+.login {
     margin: 22px 10px;
     text-decoration: none;
-    color: rgb(213, 216, 38);
+    color: #e1c330;
+    /* cursor: pointer; */
+    /* padding-bottom: 3px; */
+    /* border-bottom: 1px solid rgb(255, 163, 163); */
 }
 
-.header a:hover {
+.login:hover {
     transition: 0.3s;
     color: #fefff9; 
 }
@@ -28,12 +31,13 @@ body {
     height: 55px;
     border-radius: 50%;
     margin: 5px 15px;
-}      
+    opacity: 0.7;
+}     
 
 .rank {
     width: 45px;
-    height: 45px;
-    margin: 10px 0;
+    height: 30px;
+    margin: 17px 0;
     margin-left: 10px;
 }
 
@@ -48,8 +52,8 @@ body {
 }
 
 .section {
-    font-size: 27px;
-    padding-top: 15px;
+    font-size: 30px;
+    padding-top: 12px;
     margin: 0 auto; 
     color: #949494
 }
@@ -65,19 +69,22 @@ body {
 }
 
 .game__list__header {
+    opacity: 0.9;
     display: flex;
+    width: 103%;
     background-color: rgb(19, 19, 19);
     margin-bottom: 10px;
     margin-left: 7px;
     border-radius: 5px;
+    border-right: 1px solid rgb(123, 123, 123);
 }
 
 
 .game__list__header p {
     margin: 10px;
-    margin-left: 270px;
+    margin-left: 300px;
     margin-right: 370px;
-    font-size: 35px;
+    font-size: 30px;
     color:  #cecece;
 } 
 
@@ -108,18 +115,20 @@ body {
     color: #cecece;;
 }
 
-/* .games {
-    padding-bottom: 5px;
-} */
+.games {
+    float: left;
+} 
 
 .game {
+    opacity: 0.9;
     border-radius: 5px;
     margin-left: 7px;
     display: flex;
     height: 45px;
     flex-wrap: wrap;
-    border-bottom: 1px solid #f2f3ec; 
-    margin-bottom: 2px;
+    border-right: 1px solid rgb(123, 123, 123); 
+    margin-bottom: 2.5px;
+    width: 103%;
     background-color: #414141;
 }
 
@@ -133,7 +142,7 @@ body {
 }
 
 .game a {
-    width: 570px;
+    width: 600px;
     font-size: 14px;
     margin: 8px 0 0 15px;
     color: #f3ebeb;
@@ -167,10 +176,10 @@ p.kf {
     padding-left: -10px;
 } */
 
-p.kf:hover {
+/* p.kf:hover {
     transition: 0.3s;
     background-color: #823c17;
-}
+} */
 
 p.time {
     font-size: 12px;
@@ -196,7 +205,110 @@ p.point {
     font-weight: 550;
     margin-left: -2px;
 }
-/*.team1 {
-    margin-left: 15px;
+
+.news__header {
+    float: right;
+    width: 29.6%;
+    margin-right: 10px;
+    background-color: #2a2a2a;
+    /* margin: 10px; */
+    border-radius: 7px;
+    margin-bottom: 10px;
 }
-*/
+
+.news__header__text {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    color:  #e6e6e6;
+    border-left: 1px solid rgb(123, 123, 123);
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
+/* .list__news {
+
+} */
+
+.news {
+    background-color: rgb(19, 19, 19);
+    opacity: 0.8;
+    width: 420px;
+    float: right;
+    border-left: 1px solid rgb(123, 123, 123);
+    /* border-bottom: 1px solid rgb(200, 200, 200); */
+    border-radius: 7px;
+    margin-right: 12px;
+    margin-bottom: 4px;
+    /* margin-left: 2px; */
+    padding: 7px;
+}
+
+/* .news {
+    margin-right: 15px;
+    margin: 4px 0;
+    padding: 7px;
+} */
+
+.news__image {
+    width: 85%;
+    border-radius: 7px;
+}
+
+.news__title {
+    /* letter-spacing: ; */
+    /* inline-size: 300px; */
+    text-decoration: none;
+    color: #f3ebeb;
+    overflow-wrap: break-word;
+    font-size: 18px;
+    width: 90%;
+    font-weight: bold;
+}
+
+.news__title:hover {
+    color: #e1c330;
+    transition: 0.3s;   
+}
+
+.news p {
+    margin-top: 2px;
+    /* margin-left: 3px; */
+    inline-size: 85%;
+    color: #f3ebeb;
+    font-size: 13px;
+}
+
+
+.navbar {
+    z-index: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu-toggle {
+    display: flex;
+}
+
+.navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #f8f8f8;
+}
+
+.navbar ul.active {
+    display: flex;
+}
+
+.navbar li {
+    margin: 15px 0;
+}
+  
