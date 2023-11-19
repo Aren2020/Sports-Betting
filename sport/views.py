@@ -1,14 +1,14 @@
 from rest_framework.generics import RetrieveAPIView,ListAPIView
 from django.http import Http404
-from .models import Section, Game
-from .serializer import SectionSerializer, GameDetailSerailizer, GameListSerailizer
+from .models import Section, Game, News
+from .serializer import SectionSerializer, GameDetailSerializer, GameListSerializer, NewsSerializer
              
 class SectionListView(ListAPIView):
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
 
 class GameListView(ListAPIView):
-    serializer_class = GameListSerailizer
+    serializer_class = GameListSerializer
 
     def get_queryset(self):
         section = self.kwargs.get('section')
@@ -17,7 +17,7 @@ class GameListView(ListAPIView):
 
 class GameDetailView(RetrieveAPIView):
     queryset = Game.objects.all()
-    serializer_class = GameDetailSerailizer
+    serializer_class = GameDetailSerializer
 
     def get_object(self):
         pk = self.kwargs.get('pk')
@@ -29,3 +29,11 @@ class GameDetailView(RetrieveAPIView):
             raise Http404()
 
         return obj
+
+class NewsView(ListAPIView):
+    serializer_class = NewsSerializer
+
+    def get_queryset(self):
+        section = self.kwargs.get('section')
+        queryset = News.objects.filter(section__slug = section)[:2] 
+        return queryset

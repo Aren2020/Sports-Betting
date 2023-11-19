@@ -3,7 +3,10 @@ body {
     padding: 0;
     background-image: url("https://media.discordapp.net/attachments/1161001927925059675/1171128557968314428/auth-background-image.jpg?ex=655b8d76&is=65491876&hm=0cd49f1922c9a6f04ca7c8f24bcb9a6fc1ba8f6a4c1011d0d2f880a4b0aca279&=&width=994&height=662");
     /* background-image: url("https://cdn.discordapp.com/attachments/1161001927925059675/1171128558744252426/home-background.jpg?ex=655b8d76&is=65491876&hm=cf65b57838cad2fb55e5783210ba41af50eac8f7d009fd0d32c7fbbc81f59c87&"); */
-    background-size: cover
+    background-size: cover;
+    /* font-family: 'Inconsolata', monospace;
+    font-family: 'Lora', serif;
+    font-family: 'Raleway', sans-serif; */
 }
 
 .header {
@@ -294,14 +297,18 @@ p.point {
 }
 
 .navbar ul {
+    /* opacity: 0.8; */
     display: none;
-    flex-direction: column;
+    flex-direction: row;
+    /* flex-grow: 10 0 1; */
+    flex: 2;
     width: 50%;
+    height: 500px;
     text-align: center;
     position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #f8f8f8;
+    top: -15px;
+    left: 320px;
+    background-color: #151515;
 }
 
 .navbar ul.active {

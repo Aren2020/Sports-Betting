@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Section, Game, Team, Player
+from .models import Section, Game, Team, Player, News
 
 class SectionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,7 +22,7 @@ class TeamDetailSerializer(serializers.ModelSerializer):
         model = Team
         fields = ['name','slug','players']
  
-class GameListSerailizer(serializers.ModelSerializer):
+class GameListSerializer(serializers.ModelSerializer):
     team1 = TeamListSerializer()
     team2 = TeamListSerializer()
     class Meta:
@@ -31,7 +31,7 @@ class GameListSerailizer(serializers.ModelSerializer):
                   'time', 'tv', 'members', 'point', 
                   'win','draw','lose']
 
-class GameDetailSerailizer(serializers.ModelSerializer):
+class GameDetailSerializer(serializers.ModelSerializer):
     # section = SectionSerializer()
     team1 = TeamDetailSerializer()
     team2 = TeamDetailSerializer()
@@ -40,3 +40,8 @@ class GameDetailSerailizer(serializers.ModelSerializer):
         fields = ['id','team1','team2',
                   'time', 'tv', 'members', 'point', 
                   'win','draw','lose']
+
+class NewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = News
+        fields = ['title','title_url','image','description']

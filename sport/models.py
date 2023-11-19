@@ -38,8 +38,22 @@ class Game(models.Model):
 
     win = models.DecimalField(max_digits=10, decimal_places=2, default = 1.0)
     draw = models.DecimalField(max_digits=10, decimal_places=2, default = 1.0)
-    lose = models.DecimalField(max_digits=10, decimal_places=2, default = 1.0)
-    
+    lose = models.DecimalField(max_digits=10, decimal_places=2, default = 1.0)    
     
     def __str__(self):
         return f'{self.team1} vs {self.team2}'
+
+class News(models.Model):
+    title = models.CharField(max_length=1000)
+    title_url = models.URLField()
+    image = models.ImageField(upload_to='image')
+    description = models.TextField()
+    section = models.ForeignKey(Section, related_name = 'news', on_delete = models.CASCADE)
+    created = models.DateTimeField(auto_now_add = True)
+
+    class Meta:
+        verbose_name_plural = 'News'
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.title

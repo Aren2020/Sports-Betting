@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Section, Game, Player, Team
+from .models import Section, Game, Player, Team, News
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
@@ -22,3 +22,7 @@ class GameAdmin(admin.ModelAdmin):
                     'time', 'tv', 'members', 'point', 
                     'win', 'draw', 'lose'] 
     
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ['id','title','title_url',
+                    'image','description']
