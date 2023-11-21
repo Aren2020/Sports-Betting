@@ -46,7 +46,7 @@ class Game(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=1000)
     title_url = models.URLField()
-    image = models.ImageField(upload_to='image')
+    image = models.ImageField(upload_to = 'image/')
     description = models.TextField()
     section = models.ForeignKey(Section, related_name = 'news', on_delete = models.CASCADE)
     created = models.DateTimeField(auto_now_add = True)
