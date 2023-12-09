@@ -4,23 +4,23 @@ from .models import Section, Game, Team, Player, News
 class SectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ['name','slug']
+        fields = ['name']
 
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ['name','slug']
+        fields = ['name','image','position']
 
 class TeamListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['name','slug']   
+        fields = ['name','image']   
 
 class TeamDetailSerializer(serializers.ModelSerializer):
     players = PlayerSerializer(many = True)
     class Meta:
         model = Team
-        fields = ['name','slug','players']
+        fields = ['name','image','players']
  
 class GameListSerializer(serializers.ModelSerializer):
     team1 = TeamListSerializer()

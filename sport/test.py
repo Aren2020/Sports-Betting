@@ -2,7 +2,10 @@ import requests
 from pprint import pprint
 
 # get token...
-user_data = {'username': 'Aren', 'password': 'Aren2020',}
+user_data = {
+    'username': 'Aren',
+    'password': 'Aren2020',
+}
 token_request = requests.post('http://localhost:8000/account/login/', json = user_data)
 token_json = token_request.json()
 token = token_json['token']

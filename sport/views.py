@@ -42,8 +42,8 @@ class GameDetailView(RetrieveAPIView):
         return obj
 
 class NewsView(ListAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     serializer_class = NewsSerializer
 
