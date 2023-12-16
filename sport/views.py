@@ -6,15 +6,15 @@ from .models import Section, Game, News
 from .serializer import SectionSerializer, GameDetailSerializer, GameListSerializer, NewsSerializer
              
 class SectionListView(ListAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
 
 class GameListView(ListAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     serializer_class = GameListSerializer
 
@@ -24,8 +24,8 @@ class GameListView(ListAPIView):
         return queryset
 
 class GameDetailView(RetrieveAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     queryset = Game.objects.all()
     serializer_class = GameDetailSerializer

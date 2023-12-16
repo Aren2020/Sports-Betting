@@ -3,5 +3,5 @@ from .models import VerifyUser
 
 @admin.register(VerifyUser)
 class VerifyUserAdmin(admin.ModelAdmin):
-    list_display = ['user','email','created']
+    list_display = ['user','email','profile_picture','created']
 
