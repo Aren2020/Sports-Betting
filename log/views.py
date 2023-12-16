@@ -43,12 +43,11 @@ class CustomAuthTokenView(ObtainAuthToken):
         verifyuser = VerifyUser.objects.get(user = user)
         token, created = Token.objects.get_or_create(user = user)
 
-        profile_picture_url = request.build_absolute_uri(verifyuser.profile_picture.url)
+        image_url = request.build_absolute_uri(verifyuser.profile_picture),
         response_data = {
             'token': token.key,
-            'profile_picture_url': profile_picture_url,
+            'profile_picture_url': image_url,
         }
-
         return Response(response_data, status=status.HTTP_200_OK)
 
 class EditView(APIView):
