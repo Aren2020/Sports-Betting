@@ -44,12 +44,11 @@ class CustomAuthTokenView(ObtainAuthToken):
         verifyuser = VerifyUser.objects.get(user = user)
         token, created = Token.objects.get_or_create(user = user)
 
-        domain_name = request.build_absolute_uri().rsplit('account',1)[0]
-        img_basename =  'media' + verifyuser.profile_picture.url.rsplit('media',1)[1] 
-        image_url = domain_name + img_basename
+        base_url = request.build_absolute_uri('/')[:-1]
+        image_url = base_url + '/media/' + verifyuser.profile_picture.url.rsplit('/media/', 1)[1]
         response_data = {
             'token': token.key,
-            'profile_picture_url': image_url,
+            'profile_picture_data': image_url,
         }
         return Response(response_data, status=status.HTTP_200_OK)
 
