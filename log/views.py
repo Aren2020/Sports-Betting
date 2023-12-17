@@ -48,7 +48,7 @@ class CustomAuthTokenView(ObtainAuthToken):
         image_url = base_url + '/media/' + verifyuser.profile_picture.url.rsplit('/media/', 1)[1]
         response_data = {
             'token': token.key,
-            'profile_picture_data': image_url,
+            'profile_picture_url': image_url,
         }
         return Response(response_data, status=status.HTTP_200_OK)
 
