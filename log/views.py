@@ -8,6 +8,7 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from .models import VerifyUser
 from .mailsender import codeGenerator,send_mail
+import os
 
 class RegistrationView(APIView):
     def post(self,request):
@@ -43,7 +44,9 @@ class CustomAuthTokenView(ObtainAuthToken):
         verifyuser = VerifyUser.objects.get(user = user)
         token, created = Token.objects.get_or_create(user = user)
 
-        image_url = request.build_absolute_uri(verifyuser.profile_picture),
+        domain_name = request.build_absolute_uri().rsplit('account',1)[0]
+        img_basename =  'media' + verifyuser.profile_picture.url.rsplit('media',1)[1] 
+        image_url = domain_name + img_basename
         response_data = {
             'token': token.key,
             'profile_picture_url': image_url,
