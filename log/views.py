@@ -45,7 +45,7 @@ class CustomAuthTokenView(ObtainAuthToken):
         token, created = Token.objects.get_or_create(user = user)
 
         base_url = request.build_absolute_uri('/')[:-1]
-        image_url = base_url + '/media/' + verifyuser.profile_picture.url.rsplit('/media/', 1)[1]
+        image_url = base_url + '/media/' + os.path.basename(verifyuser.profile_picture.url)
         response_data = {
             'token': token.key,
             'profile_picture_url': image_url,
