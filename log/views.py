@@ -51,8 +51,8 @@ class CustomAuthTokenView(ObtainAuthToken):
         return Response(response_data, status=status.HTTP_200_OK)
 
 class EditView(APIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def post(self,request):
         verifuser = VerifyUser.objects.get(user = request.user)
