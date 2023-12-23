@@ -1,20 +1,21 @@
 from rest_framework.generics import RetrieveAPIView,ListAPIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView, Response
 from django.http import Http404
-from .models import Section, Game, News
-from .serializer import SectionSerializer, GameDetailSerializer, GameListSerializer, NewsSerializer
+from .models import Section, Game, News, Player
+from .serializer import SectionSerializer, GameDetailSerializer, GameListSerializer, NewsSerializer, PlayerSerializer
              
 class SectionListView(ListAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
 
 class GameListView(ListAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     serializer_class = GameListSerializer
 
@@ -24,8 +25,8 @@ class GameListView(ListAPIView):
         return queryset
 
 class GameDetailView(RetrieveAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     queryset = Game.objects.all()
     serializer_class = GameDetailSerializer
@@ -42,8 +43,8 @@ class GameDetailView(RetrieveAPIView):
         return obj
 
 class NewsView(ListAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     serializer_class = NewsSerializer
 
@@ -51,3 +52,12 @@ class NewsView(ListAPIView):
         section = self.kwargs.get('section')
         queryset = News.objects.filter(section__slug = section)[:2] 
         return queryset
+
+class PlayerDetailView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self,request, slug):
+        player = Player.objects.get(slug = slug)
+        player_data = PlayerSerializer(player).data
+        return Response(player_data)

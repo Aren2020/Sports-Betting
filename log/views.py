@@ -45,7 +45,7 @@ class CustomAuthTokenView(ObtainAuthToken):
         token, created = Token.objects.get_or_create(user = user)
 
         base_url = request.build_absolute_uri('/')[:-1]
-        image_url = base_url + '/media/' + os.path.basename(verifyuser.profile_picture.url)
+        image_url = base_url + '/media' + verifyuser.profile_picture.url.rsplit('media')[-1]
         response_data = {
             'token': token.key,
             'profile_picture_url': image_url,
@@ -57,9 +57,20 @@ class EditView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self,request):
-        verifuser = VerifyUser.objects.get(user = request.user)
-        verifuser.profile_picture = request.FILES.get('profile_picture')
-        # user.rank = request.POST.get('rank')
-        verifuser.save()
+        verifyuser = VerifyUser.objects.get(user = request.user)
+        profile_picture = request.FILES.get('profile_picture')
+        username = request.POST.get('username')
+        
+        if User.objects.filter(username = username).exclude(username = request.user.username).exists():
+            return Response({'response': 'UserAlreadyExists'})
+        elif not username:
+            return Response({'response': 'NoUserName'})
+        else:
+            request.user.username = username
+            request.user.save()
+            
+        if profile_picture:
+            verifyuser.profile_picture = request.FILES.get('profile_picture')
+            verifyuser.save()
 
-        return Response({'status':'Ok'})
+        return Response({'status':'ok'})
