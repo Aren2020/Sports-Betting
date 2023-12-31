@@ -26,3 +26,12 @@ bet_request = requests.post('http://localhost:8000/bets/create/',
                             data = bet_json)
 bet_request_json = bet_request.json()
 pprint(bet_request_json, indent = 2)
+
+# bet list
+bet_headers = {
+    'Authorization': f'Token {token}',
+}
+bet_request = requests.get('http://localhost:8000/bets/', 
+                            headers = bet_headers)
+bet_request_json = bet_request.json()
+pprint(bet_request_json, indent = 2)
