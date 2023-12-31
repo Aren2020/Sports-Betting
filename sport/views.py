@@ -57,7 +57,7 @@ class PlayerDetailView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    def get(self,request, slug):
+    def get(self, request, slug):
         player = Player.objects.get(slug = slug)
         player_data = PlayerSerializer(player).data
         return Response(player_data)

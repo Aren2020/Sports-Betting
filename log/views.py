@@ -8,7 +8,6 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from .models import VerifyUser
 from .mailsender import codeGenerator,send_mail
-import os
 
 class RegistrationView(APIView):
     def post(self,request):
@@ -22,7 +21,7 @@ class RegistrationView(APIView):
             VerifyUser.objects.create(user = user,
                                       email = data['email'])
 
-            output = {'status': 'Ok'}
+            output = {'status': 'ok'}
             return Response(output)
         else:
             if User.objects.filter(username = data['username']).exists():
@@ -56,7 +55,7 @@ class EditView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    def post(self,request):
+    def post(self, request):
         verifyuser = VerifyUser.objects.get(user = request.user)
         profile_picture = request.FILES.get('profile_picture')
         username = request.POST.get('username')

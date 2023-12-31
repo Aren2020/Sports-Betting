@@ -9,6 +9,7 @@ class VerifyUser(models.Model):
     email = models.EmailField()
     # rank = models.CharField(max_length = 4, default = '8kyu')
     profile_picture = models.ImageField(upload_to = 'users/', blank = True)
+    balance = models.PositiveIntegerField(default = 0)
     created = models.DateTimeField(auto_now_add = True)
 
     class Meta:
