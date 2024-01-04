@@ -59,7 +59,7 @@ class EditView(APIView):
     def post(self, request):
         verifyuser = VerifyUser.objects.get(user = request.user)
         profile_picture = request.FILES.get('profile_picture')
-        username = request.POST.get('username')
+        username = request.data.get('username')
         
         if User.objects.filter(username = username).exclude(username = request.user.username).exists():
             return Response({'response': 'UserAlreadyExists'})
@@ -80,7 +80,7 @@ class AddBalanceView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        amount = request.POST.get('amount')
+        amount = request.data.get('amount')
         verifyuser = request.user.verifyuser
         verifyuser.balance += int(amount)
         verifyuser.save()
