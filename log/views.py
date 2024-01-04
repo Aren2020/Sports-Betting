@@ -48,6 +48,7 @@ class CustomAuthTokenView(ObtainAuthToken):
         response_data = {
             'token': token.key,
             'profile_picture_url': image_url,
+            'balance': verifyuser.balance,
         }
         return Response(response_data, status=status.HTTP_200_OK)
 
@@ -73,3 +74,14 @@ class EditView(APIView):
             verifyuser.save()
 
         return Response({'status':'ok'})
+
+class AddBalanceView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        amount = request.POST.get('amount')
+        verifyuser = request.user.verifyuser
+        verifyuser.balance += int(amount)
+        verifyuser.save()
+        return Response({'status': 'ok'})

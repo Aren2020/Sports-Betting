@@ -21,7 +21,7 @@ class BetCreateView(APIView):
                                    user = request.user,
                                    created__lt = datetime.datetime.now() - datetime.timedelta(minutes=1, seconds=30)).exists():
             if user.verifyuser.balance < int(amount):
-                return Response({'msg': 'DontHaveEnoughBalance'})
+                return Response({'msg': 'Not enough funds'})
             user.verifyuser.balance -= int(amount)
             user.verifyuser.save()
             
@@ -31,7 +31,7 @@ class BetCreateView(APIView):
                             amount = amount,
                             user_choice = user_choice)
         else:
-            return Response({'msg': 'Try2MinuteLater'})
+            return Response({'msg': 'Try 2 minutes later'})
         
         return Response({'status': 'ok'})
 
