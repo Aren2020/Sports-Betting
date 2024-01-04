@@ -11,9 +11,9 @@ class BetCreateView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        game_id = request.POST.get('game_id')
-        amount = request.POST.get('amount')
-        user_choice = request.POST.get('user_choice')
+        game_id = request.data.get('game_id')
+        amount = request.data.get('amount')
+        user_choice = request.data.get('user_choice')
         user = request.user
         game = Game.objects.get(id = int(game_id))
 
@@ -33,7 +33,7 @@ class BetCreateView(APIView):
         else:
             return Response({'msg': 'Try 2 minutes later'})
         
-        return Response({'status': 'ok'})
+        return Response({'status': user.verifyuser.balance})
 
 class BetListView(APIView):
     authentication_classes = [TokenAuthentication]
@@ -88,4 +88,4 @@ class BetWinnerView(APIView):
                 user.verifyuser.balance += amount * kf
         Bets.objects.filter(user = user).exclude(win_choice = '').delete()
         user.verifyuser.save()
-        return Response({'status': 'ok'})
+        return Response({'balance': user.verifyuser.balance})
