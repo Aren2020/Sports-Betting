@@ -1,6 +1,6 @@
 # Simple Sports Betting Website
-Frontend - https://github.com/arsenyeganyan/gpt-shirakatsy 
-Backend  - https://github.com/Aren2020/ShirGpt
+Frontend - https://github.com/arsenyeganyan/casino-sample
+Backend  - https://github.com/Aren2020/CasinoWeb
 
 This project is a simple implementation of a sports betting website backend using Django REST Framework (DRF). Users can view upcoming matches, place bets, and view their betting history.
 
