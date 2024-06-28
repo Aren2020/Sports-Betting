@@ -1,6 +1,6 @@
 # Simple Sports Betting Website
 Frontend - https://github.com/arsenyeganyan/casino-sample
-Backend  - https://github.com/Aren2020/CasinoWeb
+Backend  - https://github.com/Aren2020/Sports-Betting
 
 This project is a simple implementation of a sports betting website backend using Django REST Framework (DRF). Users can view upcoming matches, place bets, and view their betting history.
 
@@ -18,8 +18,8 @@ This project is a simple implementation of a sports betting website backend usin
 
 1. Clone the repository:
    ```
-   git clone https://github.com/Aren2020/CasinoWeb.git
-   cd CasinoWeb
+   git clone https://github.com/Aren2020/Sports-Betting.git
+   cd Sports-Betting
    ```
 
 2. Create a virtual environment:
